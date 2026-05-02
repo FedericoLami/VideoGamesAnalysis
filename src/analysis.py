@@ -33,5 +33,15 @@ def return_Top_Platforms(col_name,region):
 
 #Bloque 3: Publishers en profundidad
 
-def return_Top3_Publishers():
-    df_top3 = df.groupby("Global_Sales")["Genre"].sum().sort_values(ascending = False).head(3)
+def return_Top_Publishers_Genre():
+    df_top_Publishers = df.groupby("Publishers")["Genre"].sum().sort_values(ascending = False).head(3)
+    return df_top_Publishers
+
+def return_Top_Publishers_Genre():
+    df_pg = df.groupby(["Publisher","Genre"])["Global_Sales"].sum().reset_index()
+    df_pg["rank"] = df_pg.groupby("Genre")["Global_Sales"].rank(ascending=False,method="min")
+    df_dominantes = df_pg[df_pg["rank"] == 1]
+    df_result = df_dominantes.groupby("Genre").size()
+    return df_result[df_result>1]
+
+

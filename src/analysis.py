@@ -17,7 +17,7 @@ def return_Top10_global_Sales():
     return(df_top10[["Platform","Name","Global_Sales"]])
 
 #Retorno de platform, publisher, genre
-def return_Top_Platforms(col_name):
+def return_Top_Bloq1(col_name):
     df_top_Platforms = df.groupby(col_name)["Global_Sales"].sum().sort_values(ascending = False)
     return(df_top_Platforms)
 
@@ -28,7 +28,7 @@ def return_Top_Platforms(col_name):
 #Region JP
 #Region Other_Region
 
-def return_Top_Platforms(col_name,region):
+def return_Top_Bloq2(col_name,region):
     df_top_Platforms = df.groupby(col_name)[region].sum().sort_values(ascending = False)
     return(df_top_Platforms)
 

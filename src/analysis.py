@@ -9,6 +9,7 @@ def retornarPath():
 df = pd.read_csv(retornarPath())
 
 
+
 #Bloque 1: Analisis de Mercado Global
 
 def return_Top10_global_Sales():
@@ -68,7 +69,7 @@ def return_Market_Distribution():
             "% del total": round(ventas_tramo / total_ventas * 100, 1)
         })
 
-        return pd.DataFrame(resultados)
+    return pd.DataFrame(resultados)
     
 def return_concentracion_top10():
     df_sorted = df.sort_values("Global_Sales", ascending=False)

@@ -21,3 +21,15 @@ st.title("Mejor publisher")
 st.dataframe(return_Top_Bloq1("Publisher"))
 st.title("Mejor genero")
 st.dataframe(return_Top_Bloq1("Genre"))
+
+
+st.title("Analisis por region")
+
+st.title("Region NA")
+st.dataframe(return_Top_Bloq2())
+st.title("Region EU")
+st.dataframe(return_Top_Bloq2())
+st.title("Region JP")
+st.dataframe(return_Top_Bloq2())
+st.title("Otras regiones")
+

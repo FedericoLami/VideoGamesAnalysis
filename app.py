@@ -33,3 +33,9 @@ st.title("Region JP")
 st.dataframe(return_Top_Bloq2())
 st.title("Otras regiones")
 
+
+st.title("Analisis de publishers en profundidad")
+st.title("Top publishers")
+st.dataframe(return_Top_Publishers())
+st.title("Top publishers por genero")
+st.dataframe(return_Top_Publishers_Genre())

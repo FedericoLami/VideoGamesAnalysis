@@ -1,5 +1,5 @@
 import streamlit as st
-from src.analysis import return_Top10_global_Sales, return_concentracion_top10, return_Market_Distribution, return_Top_Bloq1, return_Top_Bloq2, return_Top_Publishers, return_Top_Publishers_Genre
+from src.analysis import return_Top10_global_Sales, return_concentracion_top10, return_Market_Distribution, return_Top_Bloq1, return_Top_Bloq2, return_Top_Publishers, return_Top_Publisher_By_Genre
 
 st.title("Analisis de videojuegos")
 
@@ -47,4 +47,4 @@ st.header("Analisis de publishers en profundidad")
 st.subheader("Top publishers")
 st.dataframe(return_Top_Publishers())
 st.subheader("Top publishers por genero")
-st.dataframe(return_Top_Publishers_Genre())
+st.dataframe(return_Top_Publisher_By_Genre())

@@ -1,6 +1,7 @@
 import streamlit as st
 from src.analysis import return_Top10_global_Sales, return_concentracion_top10, return_Market_Distribution
 
+st.subheader("Top 10 juegos globales")
 
 st.title("Analisis de videojuegos")
 st.dataframe(return_Top10_global_Sales())

@@ -36,15 +36,14 @@ def return_Top_Bloq2(col_name,region):
 #Bloque 3: Publishers en profundidad
 
 def return_Top_Publishers():
-    df_top_Publishers = df.groupby("Publisher")["Genre"].sum().sort_values(ascending = False).head(3)
+    df_top_Publishers = df.groupby("Publisher")["Global_Sales"].sum().sort_values(ascending=False).head(3)
     return df_top_Publishers
 
-def return_Top_Publishers_Genre():
-    df_pg = df.groupby(["Publisher","Genre"])["Global_Sales"].sum().reset_index()
-    df_pg["rank"] = df_pg.groupby("Genre")["Global_Sales"].rank(ascending=False,method="min")
-    df_dominantes = df_pg[df_pg["rank"] == 1]
-    df_result = df_dominantes.groupby("Genre").size()
-    return df_result[df_result>1]
+def return_Top_Publisher_By_Genre():
+    df_top_Publishers = df.groupby(["Publisher","Genre"])["Global_Sales"].sum().reset_index().sort_values("Global_Sales", ascending = False)
+    df_top_Publishers["rank"] = df_top_Publishers.groupby("Genre")["Global_Sales"].rank(ascending=False,method="min")
+    df_dominantes = df_top_Publishers[df_top_Publishers["rank"] == 1]
+    return df_dominantes
 
 
 #Bloque 4: Estructura del mercado

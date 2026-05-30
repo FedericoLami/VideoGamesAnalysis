@@ -36,7 +36,7 @@ def return_Top_Bloq2(col_name,region):
 #Bloque 3: Publishers en profundidad
 
 def return_Top_Publishers():
-    df_top_Publishers = df.groupby("Publishers")["Genre"].sum().sort_values(ascending = False).head(3)
+    df_top_Publishers = df.groupby("Publisher")["Genre"].sum().sort_values(ascending = False).head(3)
     return df_top_Publishers
 
 def return_Top_Publishers_Genre():
